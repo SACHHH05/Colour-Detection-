@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-# Initialize video capture
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -13,7 +12,6 @@ while True:
     img = cv2.resize(img, (640, 480))
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-    # Define color ranges in HSV
     lower_red = np.array([0, 50, 50])
     upper_red = np.array([10, 255, 255])
     lower_green = np.array([40, 20, 50])
@@ -25,14 +23,12 @@ while True:
     lower_white = np.array([0, 0, 200])
     upper_white = np.array([179, 20, 255])
 
-    # Create masks
     mask_red = cv2.inRange(hsv, lower_red, upper_red)
     mask_green = cv2.inRange(hsv, lower_green, upper_green)
     mask_blue = cv2.inRange(hsv, lower_blue, upper_blue)
     mask_black = cv2.inRange(hsv, lower_black, upper_black)
     mask_white = cv2.inRange(hsv, lower_white, upper_white)
 
-    # Process contours for each color
     for mask, color, text, rect_color in [
         (mask_red, (0, 0, 255), "Red", (0, 0, 255)),
         (mask_green, (0, 255, 0), "Green", (0, 255, 0)),
@@ -50,7 +46,6 @@ while True:
 
     cv2.imshow('Color Recognition Output', img)
 
-    # Exit on pressing 'x'
     if cv2.waitKey(1) & 0xFF == ord('x'):
         break
 

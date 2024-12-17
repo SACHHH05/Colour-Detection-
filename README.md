@@ -1,54 +1,99 @@
-# Colour-Detection-
-
 ---
 
-Real-Time Color Detection using OpenCV
+Color Detection Using OpenCV
 
-This project is a Python-based real-time color detection application that uses OpenCV to detect and highlight specific colors (red, green, blue, black, and white) from a live camera feed.
----
+This project is a real-time color detection application that uses OpenCV to capture video from a webcam and detect various colors in the frame. The code processes the video stream and identifies the presence of 20 distinct colors, marking them with bounding boxes and labels.
+
 Features
 
-Detects predefined colors in real-time using the HSV color space.
+Detects 20 different colors in real-time from a webcam feed.
 
-Draws bounding rectangles around detected objects.
+Uses HSV color space for better color detection under varying lighting conditions.
 
-Displays labels indicating the detected color.
+Displays bounding boxes around detected colors in the video frame.
 
-Easy to use with live camera input.
----
-Demo
+Labels the detected colors on the video stream.
 
-When you run the program:
 
-Hold an object of a predefined color (red, green, blue, black, or white) in front of the camera.
+Colors Detected
 
-The object will be highlighted with a rectangle in its respective color, and a label will be displayed above it.
+The application is capable of detecting the following 20 colors:
 
----
+1. Red
+
+
+2. Green
+
+
+3. Blue
+
+
+4. Black
+
+
+5. White
+
+
+6. Yellow
+
+
+7. Cyan
+
+
+8. Magenta
+
+
+9. Orange
+
+
+10. Pink
+
+
+11. Brown
+
+
+12. Violet
+
+
+13. Gray
+
+
+14. Beige
+
+
+15. Turquoise
+
+
+16. Lime
+
+
+17. Indigo
+
+
+18. Peach
+
+
+19. Lavender
+
+
+20. Teal
+
+
+
 Prerequisites
 
-Make sure you have the following installed:
+Make sure to install the necessary libraries:
 
-Python 3.x
-
-OpenCV library (cv2)
-
-NumPy library (numpy)
-
+pip install opencv-python numpy
 
 Installation
 
-1. Clone this repository to your local machine:
+1. Clone the repository:
 
-git clone https://github.com/yourusername/color-detection.git
-
-
-2. Navigate to the project folder:
-
-cd color-detection
+git clone https://github.com/your-username/color-detection.git
 
 
-3. Install the required libraries:
+2. Install the required dependencies using pip (if not already installed):
 
 pip install opencv-python numpy
 
@@ -56,6 +101,37 @@ pip install opencv-python numpy
 
 Usage
 
-1. Run the script:
+1. Run the Python script to start detecting colors:
+
+python color_detection.py
 
 
+2. A webcam window will open. The script will continuously capture frames and attempt to identify the defined colors.
+
+
+3. Colors that are detected in the video feed will be outlined with a bounding box and labeled with the name of the color.
+
+
+4. To exit the application, press the 'x' key.
+
+
+
+Code Explanation
+
+HSV Color Space: The script uses the HSV (Hue, Saturation, Value) color space for detecting colors, which is more effective under varying lighting conditions than RGB.
+
+Contours: The code uses OpenCV's findContours() function to detect contours of objects matching the specified color range.
+
+Bounding Boxes and Labels: For each color detected, a bounding box is drawn around the object, and the color's name is displayed above it.
+
+
+Contributing
+
+Feel free to fork this project and submit pull requests if you have any improvements or bug fixes.
+
+License
+
+This project is open-source and available under the MIT License.
+
+
+---

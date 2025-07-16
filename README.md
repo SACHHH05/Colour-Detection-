@@ -1,112 +1,61 @@
----
+# Color Detection using OpenCV
 
-Real-Time Color Detection using OpenCV
-
-This project is a Python-based real-time color detection application that uses OpenCV to detect colors from a live camera feed.
----
-Colors Detected
-
-The application is capable of detecting the following 20 colors:
-
-1. Red
-
-
-2. Green
-
-
-3. Blue
-
-
-4. Black
-
-
-5. White
-
-
-6. Yellow
-
-
-7. Cyan
-
-
-8. Magenta
-
-
-9. Orange
-
-
-10. Pink
-
-
-11. Brown
-
-
-12. Violet
-
-13. Gray
-
-
-14. Beige
-
-
-15. Turquoise
-
-
-16. Lime
-
-
-17. Indigo
-
-
-18. Peach
-
-
-19. Lavender
-
-20. Teal
----
-Features
-
-Detects predefined colors in real-time using the HSV color space.
-
-Draws bounding rectangles around detected objects.
-
-Displays labels indicating the detected color.
-
-Easy to use with live camera input.
----
-Demo
-
-When you run the program:
-
-Hold an object of a predefined color (red, green, blue, black, or white) in front of the camera.
-
-The object will be highlighted with a rectangle in its respective color, and a label will be displayed above it.
----
-Prerequisites
-
-Make sure you have the following installed:
-
-Python 3.x
-
-OpenCV library (cv2)
-
-NumPy library (numpy)
+This project is a real-time color detection tool built using *Python* and *OpenCV*. It captures video from your webcam and detects 20 different colors live on the screen. Each color is shown with a bounding box and label.
 
 ---
-Code Explanation
 
-HSV Color Space: The script uses the HSV (Hue, Saturation, Value) color space for detecting colors, which is more effective under varying lighting conditions than RGB.
+## What It Does
+- Detects *20 colors* from your webcam video feed.
+- Draws *boxes* around the detected colors.
+- Labels the color name on the video stream.
+- Works well under different lighting using *HSV color space*.
 
-Contours: The code uses OpenCV's findContours() function to detect contours of objects matching the specified color range.
-
-Bounding Boxes and Labels: For each color detected, a bounding box is drawn around the object, and the color's name is displayed above it.
-
-Contributing
-
-Feel free to fork this project and submit pull requests if you have any improvements or bug fixes.
 ---
-License
 
-This project is open-source and available under the MIT License.
+## Colors Detected
+
+- Red
+- Green
+- Blue
+- Black
+- White
+- Yellow
+- Cyan
+- Magenta
+- Orange
+- Pink
+- Brown
+- Violet
+- Gray
+- Beige
+- Turquoise
+- Lime
+- Indigo
+- Peach
+- Lavender
+- Teal
+
 ---
+
+## How It Works
+
+- The script converts each video frame to *HSV color space*.
+- It applies color masks to find areas with a specific color.
+- It detects *contours* for those areas and draws bounding boxes.
+- The color name is displayed on top of the box.
+
+---
+
+## Project File
+- color_detector.py – Main script that runs color detection using OpenCV.
+
+---
+
+## How to Run
+
+### 1. Install Requirements
+pip install opencv-python numpy
+### 2. Run the script
+python color_detector.py
+### 3.To exit
+press the x key
